@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_dashboard">
+
+
+    <fragment
+        android:id="@+id/navigation_dashboard"
+        android:name="com.kma.securechatapp.ui.home.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_navigation_dashboard_to_postDetaillFragment"
+            app:destination="@id/postDetaillFragment"
+            app:popUpTo="@id/postDetaillFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_user_profile"
+            app:destination="@id/user_profile" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_user_fragment2"
+            app:destination="@id/user_fragment" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.kma.securechatapp.ui.contact.ContactListFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_contact" />
+    <fragment
+        android:id="@+id/navigation_conversation"
+        android:name="com.kma.securechatapp.ui.conversation.ConversationListFragment"
+        android:label="@string/title_conversations"
+        tools:layout="@layout/fragment_conversation" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.kma.securechatapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/postDetaillFragment"
+        android:name="com.kma.securechatapp.ui.post_details.PostDetaillFragment"
+        android:label="PostDetaillFragment"
+        tools:layout="@layout/fragment_post_detail" />
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.kma.securechatapp.ui.create_post.CreatePostFragment"
+        android:label="CreatePostFragment"
+        tools:layout="@layout/fragment_create_post">
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/user_profile"
+        android:name="com.kma.securechatapp.ui.home.profile.UserProfileFragment"
+        android:label="UserProfile"
+        tools:layout="@layout/fragment_profile_id">
+        <action
+            android:id="@+id/action_user_profile_to_postDetaillFragment"
+            app:destination="@id/postDetaillFragment" />
+        <action
+            android:id="@+id/action_user_profile_to_more_profile"
+            app:destination="@id/more_profile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/more_profile"
+        android:name="com.kma.securechatapp.ui.home.profile.MoreProfileFragment"
+        android:label="MoreProfile"
+        tools:layout="@layout/fragment_more_profile_by_id" />
+    <fragment
+        android:id="@+id/user_fragment"
+        android:name="com.kma.securechatapp.ui.user_me.UserFragment"
+        android:label="UserFragment"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/action_user_fragment_to_profile_fragment"
+            app:destination="@id/profile_fragment" />
+        <action
+            android:id="@+id/action_user_fragment_to_createPostFragment"
+            app:destination="@id/createPostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:name="com.kma.securechatapp.ui.user_me.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profile_fragment_to_update_profile_fragment"
+            app:destination="@id/update_profile_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/update_profile_fragment"
+        android:name="com.kma.securechatapp.ui.user_me.UpdateProfileFragment"
+        android:label="UpdateProfileFragment"
+        tools:layout="@layout/fragment_update_profile"/>
+
+
+</navigation>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.kma.securechatapp.core.api.model.userprofile.DataUser" />
+
+        <variable
+            name="profile"
+            type="com.kma.securechatapp.core.api.model.userprofile.DataProfile" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A0DEF6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/csTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgBack"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Sửa Thông Tin"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <View
+                android:id="@+id/vLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="10dp"
+                android:background="#8A8888"
+                app:layout_constraintTop_toBottomOf="@id/tvInf" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:backgroundTint="#FFFFFF"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/csTab">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/csTab">
+
+                <TextView
+                    android:id="@+id/tvCaNhan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Cá Nhân"
+                    android:textColor="#105AED"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvfirst_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Họ:"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvCaNhan"
+                    app:layout_constraintTop_toBottomOf="@id/tvCaNhan" />
+
+                <EditText
+                    android:id="@+id/edt_first_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:textColor="@color/text_color_back"
+                    setEditText="@{user.first_name}"
+                    android:hint="Họ"
+                    android:padding="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tvfirst_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvfirst_name" />
+
+                <TextView
+                    android:id="@+id/tvlast_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Tên:"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/tvfirst_name"
+                    app:layout_constraintTop_toBottomOf="@id/tvfirst_name" />
+
+
+
+                <EditText
+                    android:id="@+id/edt_last_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Tên"
+                    android:textSize="20sp"
+                    android:textColor="@color/text_color_back"
+                    setEditText="@{user.last_name}"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tvlast_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/edt_first_name"
+                    app:layout_constraintTop_toTopOf="@id/tvlast_name" />
+
+
+
+
+                <TextView
+                    android:id="@+id/tv_gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Gender:"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/gender_male_female"
+                    app:layout_constraintStart_toStartOf="@id/tvlast_name"
+                    app:layout_constraintTop_toBottomOf="@id/tvlast_name" />
+
+                <EditText
+                    android:id="@+id/edt_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Gender"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    setEditText="@{user.gender}"
+                    android:textColor="@color/text_color_back"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_gender"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tv_gender"
+                    app:layout_constraintTop_toTopOf="@id/tv_gender" />
+
+
+                <View
+                    android:id="@+id/vLine2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#8A8888"
+                    app:layout_constraintTop_toBottomOf="@id/edt_gender" />
+
+                <TextView
+                    android:id="@+id/tvHocVan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Học Vấn"
+                    android:textColor="#105AED"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vLine2" />
+
+                <ImageView
+                    android:id="@+id/imgSchool"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_baseline_school_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHocVan" />
+
+                <EditText
+                    android:id="@+id/edt_highSchool"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Thêm trường đại học"
+                    android:paddingTop="0dp"
+                    android:text=""
+                    setEditText="@{profile.hight_school.name}"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/imgSchool"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imgSchool"
+                    app:layout_constraintTop_toTopOf="@id/imgSchool" />
+
+                <ImageView
+                    android:id="@+id/imgUniversity"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/town_hall"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imgSchool" />
+
+                <EditText
+                    android:id="@+id/edt_university"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Thêm trường THPT"
+                    android:paddingTop="0dp"
+                    android:text=""
+                    setEditText="@{profile.university.name}"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/imgUniversity"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/imgUniversity"
+                    app:layout_constraintTop_toTopOf="@id/imgUniversity" />
+
+                <View
+                    android:id="@+id/vLine3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#8A8888"
+                    app:layout_constraintTop_toBottomOf="@id/imgUniversity" />
+
+                <TextView
+                    android:id="@+id/tvLienHe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Liên Hệ"
+                    android:textColor="#105AED"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vLine3" />
+
+                <ImageView
+                    android:id="@+id/imgEmail"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_baseline_email_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLienHe" />
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="1dp"
+                    android:paddingTop="0dp"
+                    android:text=""
+                    android:hint="Thêm Email"
+                    setEditText="@{user.email}"
+                    android:textColor="@color/text_color_back"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/imgEmail"
+                    app:layout_constraintStart_toEndOf="@id/imgEmail"
+                    app:layout_constraintTop_toTopOf="@id/imgEmail" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpdate"
+            style="@style/Widget.MaterialComponents.Button.Icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#036BDA"
+            android:text="Xác nhận chỉnh sửa"
+            android:textColor="@color/whiteF"
+            android:textAllCaps="false"
+            android:theme="@style/Theme.MaterialComponents"
+            app:icon="@drawable/update_accept"
+            app:iconGravity="textStart"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@+id/navigation_login">
+ 
+    <fragment
+        android:id="@+id/navigation_account"
+        android:name="com.kma.securechatapp.ui.authentication.AccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" />
+
+
+    <fragment
+        android:id="@+id/navigation_password"
+        android:name="com.kma.securechatapp.ui.authentication.PasswordFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login2" />
+
+    <fragment
+        android:id="@+id/navigation_create_account"
+        android:name="com.kma.securechatapp.ui.authentication.createaccount.CreateAccountFragment"
+        android:label=""
+        tools:layout="@layout/fragment_create_account" />
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.kma.securechatapp.ui.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/layout_login">
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_register"
+            app:destination="@id/navigation_register" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_register"
+        android:name="com.kma.securechatapp.ui.login.create_account.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/layout_register" />
+</navigation>

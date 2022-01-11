@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/change_pin_navigation"
+    app:startDestination="@+id/navigation_old_pin">
+
+    <fragment
+        android:id="@+id/navigation_old_pin"
+        android:name="com.kma.securechatapp.ui.authentication.changepin.ChangeOldPinFragment"
+        android:label=""
+        tools:layout="@layout/fragment_olpin_input" />
+
+
+    <fragment
+        android:id="@+id/navigation_new_pin"
+        android:name="com.kma.securechatapp.ui.authentication.changepin.ChangeNewPinFragment"
+        android:label=""
+        tools:layout="@layout/fragment_newpin_input" />
+
+</navigation>

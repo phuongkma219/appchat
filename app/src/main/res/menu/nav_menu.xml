@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group >
+        <item
+            android:icon="@drawable/ic_face_black_24dp"
+            android:id="@+id/menu_item_about"
+            android:title="Thông tin app" />
+         <item
+            android:icon="@drawable/ic_key_black"
+            android:id="@+id/menu_item_setting"
+            android:title="Đổi mã pin" />
+        <item
+            android:icon="@drawable/ic_key_black"
+            android:id="@+id/menu_item_export_private"
+            android:title="Xuất khoá private" />
+        <item
+            android:icon="@drawable/ic_baseline_insert_drive_file_24"
+            android:id="@+id/menu_item_remove"
+            android:title="Xoá dữ liệu bộ nhớ đệm" />
+
+    </group>
+    <group >
+        <item
+            android:icon="@drawable/ic_cancel_black_24dp"
+            android:id="@+id/menu_item_logout"
+            android:title="Đăng xuất" />
+    </group>
+</menu>

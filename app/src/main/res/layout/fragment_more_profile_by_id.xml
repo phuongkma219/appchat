@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+        <data>
+
+            <variable
+                name="user"
+                type="com.kma.securechatapp.core.api.model.userprofile.DataUser" />
+
+            <variable
+                name="profile"
+                type="com.kma.securechatapp.core.api.model.userprofile.DataProfile" />
+        </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A0DEF6">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardBackgroundColor="#105AED">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgBack"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_baseline_navigate_before_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvInf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Thông tin"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:paddingBottom="6dp"
+                    android:textColor="@color/whiteF"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView"
+        android:layout_marginTop="48dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvAvt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:text="Ảnh Đại Diện"
+                android:textColor="@color/text_color_header"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgAvt"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:src="@mipmap/ic_launcher"
+                app:civ_border_color="#979090"
+                app:civ_border_width="2dp"
+                loadImage="@{user.avatar}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAvt" />
+
+            <View
+                android:id="@+id/vLine2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#8A8888"
+                app:layout_constraintTop_toBottomOf="@id/imgAvt"
+                />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            android:layout_margin="8dp"
+            android:backgroundTint="#FFFFFF"
+            app:cardElevation="@dimen/cardview_default_elevation"
+            app:layout_constraintTop_toBottomOf="@id/vLine2"
+            app:layout_constraintStart_toStartOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvCaNhan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:text="Cá Nhân"
+                android:textColor="@color/text_color_header"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"  />
+
+
+            <TextView
+                android:id="@+id/tvfirst_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:text="First name:"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCaNhan" />
+
+            <TextView
+                android:id="@+id/txtfirst_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                setText="@{user.first_name}"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvfirst_name"
+                app:layout_constraintStart_toEndOf="@id/tvfirst_name" />
+
+            <TextView
+                android:id="@+id/tvlast_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last name:"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvfirst_name"
+                app:layout_constraintTop_toBottomOf="@id/tvfirst_name"/>
+
+            <TextView
+                android:id="@+id/txtlast_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvlast_name"
+                app:layout_constraintStart_toEndOf="@id/tvlast_name" />
+
+
+
+            <TextView
+                android:id="@+id/tvfull_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Full name:"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtlast_name" />
+
+            <TextView
+                android:id="@+id/txtfull_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvfull_name"
+                app:layout_constraintStart_toEndOf="@id/tvfull_name"
+                app:layout_constraintStart_toStartOf="@id/txtfirst_name" />
+
+            <TextView
+                android:id="@+id/txt_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:drawableLeft="@drawable/gender_male_female"
+                android:textStyle="bold"
+                setGender="@{user.gender}"
+                app:layout_constraintStart_toStartOf="@id/tvfull_name"
+                app:layout_constraintTop_toTopOf="@id/txt_birth_day"
+                app:layout_constraintBottom_toBottomOf="@id/tvfull_name"/>
+
+
+            <TextView
+                android:id="@+id/txt_birth_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"
+                android:text="Birth Day: 18/11/2000"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/txt_gender"
+                android:drawableLeft="@drawable/cake_variant"
+                app:layout_constraintStart_toStartOf="@id/txt_gender"/>
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="Address: Hà Nội"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/txt_birth_day"
+                app:layout_constraintTop_toBottomOf="@id/txt_birth_day"
+                 />
+
+            <View
+                android:id="@+id/vLine3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#8A8888"
+                app:layout_constraintTop_toBottomOf="@id/tv_address" />
+
+            <TextView
+                android:id="@+id/tvHocVan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:text="Học Vấn"
+                android:textColor="@color/text_color_header"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vLine3" />
+
+            <TextView
+                android:id="@+id/tv_highSchool"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                setTextProfile="@{profile.hight_school.name}"
+                android:drawableLeft="@drawable/ic_baseline_school_24"
+                app:layout_constraintStart_toStartOf="@id/tvHocVan"
+                app:layout_constraintTop_toBottomOf="@id/tvHocVan"/>
+            <TextView
+                android:id="@+id/tv_university"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                setTextProfile="@{profile.university.name}"
+                android:drawableLeft="@drawable/town_hall"
+                app:layout_constraintStart_toStartOf="@id/tv_highSchool"
+                app:layout_constraintTop_toBottomOf="@id/tv_highSchool"/>
+            <View
+                android:id="@+id/vLine4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#8A8888"
+                app:layout_constraintTop_toBottomOf="@id/tv_university" />
+
+            <TextView
+                android:id="@+id/tvLienHe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:text="Liên Hệ"
+                android:textColor="@color/text_color_header"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vLine4" />
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                setText="@{user.email}"
+                android:drawableLeft="@drawable/ic_baseline_email_24"
+                app:layout_constraintStart_toStartOf="@id/tvLienHe"
+                app:layout_constraintTop_toBottomOf="@id/tvLienHe"/>
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0999956789"
+                android:textColor="@color/text_color_back"
+                android:textSize="20sp"
+                android:textStyle="bold"
+               android:drawableLeft="@drawable/ic_baseline_phone_24"
+                app:layout_constraintTop_toBottomOf="@id/tv_email"
+                app:layout_constraintStart_toStartOf="@id/tv_email"/>
+
+            <View
+                android:id="@+id/vLine5"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#8A8888"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>
