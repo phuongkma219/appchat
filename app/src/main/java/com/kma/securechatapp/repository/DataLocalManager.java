@@ -1,7 +1,9 @@
 package com.kma.securechatapp.repository;
 
 import android.content.Context;
+import android.util.Log;
 
+import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.core.api.model.post.UserX;
 import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.ui.login.MySharePreferences;
@@ -21,13 +23,23 @@ public class DataLocalManager {
         return instance;
     }
     public static DataLogin getData(){
-        return DataLocalManager.getInstance().sharePreferences.getData();
+          return DataLocalManager.getInstance().sharePreferences.getData();
     }
     public static UserX getUser(){
-        return DataLocalManager.getInstance().sharePreferences.getData().user;
+      if(DataLocalManager.getInstance().sharePreferences.getData() ==null){
+          return UserX.emptyUser();
+      }
+      else {
+          return DataLocalManager.getInstance().sharePreferences.getData().user;
+      }
     }
     public static String getToKen(){
-        return DataLocalManager.getInstance().sharePreferences.getData().access_token;
+        if(DataLocalManager.getInstance().sharePreferences.getData() ==null){
+            return Constant.TOKEN;
+        }
+        else {
+           return DataLocalManager.getInstance().sharePreferences.getData().access_token;
+        }
     }
     public static void setData(DataLogin dataLogin){
         DataLocalManager.getInstance().sharePreferences.putData(dataLogin);

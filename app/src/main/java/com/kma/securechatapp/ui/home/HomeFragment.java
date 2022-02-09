@@ -99,8 +99,8 @@ public class HomeFragment extends BaseFragment<FragmentHomeBinding> implements V
 
                 }
                 else {
-                    userX = DataLocalManager.getUser();
-                    Utils.loadImage(binding.ivAvatar, userX.avatar);
+//                    userX = DataLocalManager.getUser();
+//                    Utils.loadImage(binding.ivAvatar, userX.avatar);
                 }
 
             }

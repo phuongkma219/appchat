@@ -76,7 +76,7 @@ public final class Utils {
        if(links!=null){
            icv.clearImages();
            for (int i = 0; i < links.size(); i++) {
-               Glide.with(icv)
+               Glide.with(icv.getContext())
                        .asBitmap()
                        .load(Constant.BASE_URL + links.get(i).replace("\\", "/"))
                        .into(new CustomTarget<Bitmap>() {
@@ -92,6 +92,7 @@ public final class Utils {
                        });
            }
        }
+       Glide.with(icv.getContext()).clear(icv);
     }
 
     @JvmStatic

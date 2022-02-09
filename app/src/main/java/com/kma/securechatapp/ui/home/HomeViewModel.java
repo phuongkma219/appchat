@@ -63,7 +63,7 @@ public class HomeViewModel extends ViewModel {
         api.getPostsPage(Constant.PREFIX_TOKEN  + token, page).enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
-                if (response.body() == null) {
+                if (response.body() == null || response.body().data ==null) {
                     posts.setValue(null);
                 } else {
                     posts.setValue(response.body().data.posts);

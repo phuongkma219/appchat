@@ -143,7 +143,9 @@ public class LoginFragment extends BaseFragment<LayoutLoginBinding> implements V
         }
 
 //        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
-        this.getActivity().finishActivity(0);
-        this.getActivity().finish();
+//        this.getActivity().finishActivity(0);
+//        this.getActivity().finish();
+        Intent intent = new Intent(this.getActivity(),MainActivity.class);
+        startActivity(intent);
     }
 }

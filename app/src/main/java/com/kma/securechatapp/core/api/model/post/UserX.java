@@ -39,6 +39,8 @@ public class UserX {
         this.last_name = last_name;
         this.username = username;
     }
-
+    public final static UserX emptyUser(){
+        return new UserX(1,"sdfgh","a","a","a","a","a","a","a","a","a","a");
+    }
 
 }
