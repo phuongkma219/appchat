@@ -15,6 +15,7 @@ import com.kma.securechatapp.MainActivity;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.base.BaseFragment;
 import com.kma.securechatapp.core.AppData;
+import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.userprofile.login.UserDTO;
 import com.kma.securechatapp.core.api.model.userprofile.login.UserLogin;
 import com.kma.securechatapp.core.event.EventBus;
@@ -119,6 +120,10 @@ public class LoginFragment extends BaseFragment<LayoutLoginBinding> implements V
                         } else {
                             EventSendData.getInstance().pushOnLogin(response.body().data);
                             DataLocalManager.setData(response.body().data);
+                            AppData.getInstance().setToken(response.body().data.access_token);
+                            AppData.getInstance().account = response.body().data.user.username;
+                            AppData.getInstance().setUserUUID(response.body().data.user._id);
+                            EventBus.getInstance().pushOnLogin(new UserInfo(response.body().data.user._id,response.body().data.user.username, "",0l ));
                             onLoginSuccess();
                         }
                     }
@@ -126,6 +131,7 @@ public class LoginFragment extends BaseFragment<LayoutLoginBinding> implements V
                     @Override
                     public void onFailure(Call<UserLogin> call, Throwable t) {
                         CommonHelper.hideLoading();
+                        t.printStackTrace();
                         binding.tvEr.setVisibility(View.VISIBLE);
                         binding.tvEr.setText("Đăng nhập thất bại..");
                     }

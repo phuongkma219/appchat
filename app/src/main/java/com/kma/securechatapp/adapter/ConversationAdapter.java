@@ -36,7 +36,7 @@ public class ConversationAdapter extends RecyclerView.Adapter {
         }else{
             avatar_id = conversation.user_uuid;
         }
-        conversationHolder.setAvatar(BuildConfig.HOST +"conversation/thumb/"+conversation.UUID+"/"+ AppData.getInstance().currentUser.uuid +"?width=80&height=80");
+        conversationHolder.setAvatar(BuildConfig.HOST +"conversation/thumb/"+conversation.UUID+"/"+ AppData.getInstance().userUUID +"?width=80&height=80");
         conversationHolder.setTitle(conversation.name);
        // conversationHolder.setMessage(conversation.lastMessage);
         conversationHolder.setMessage("⚿ đã mã hoá");

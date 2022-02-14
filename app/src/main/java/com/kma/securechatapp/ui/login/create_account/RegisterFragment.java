@@ -222,6 +222,7 @@ public class RegisterFragment extends BaseFragment<LayoutRegisterBinding> implem
 
                 @Override
                 public void onFailure(Call<BaseApiRespone> call, Throwable t) {
+                    t.printStackTrace();
                         Toast.makeText(RegisterFragment.this.getContext(),"Đăng ký thất bại",Toast.LENGTH_SHORT).show();
                         Log.d("kkk", "onFailure: ");
                 }

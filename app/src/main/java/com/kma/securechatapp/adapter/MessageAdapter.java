@@ -81,7 +81,7 @@ public class MessageAdapter extends   RecyclerView.Adapter {
         if (message == null){
             return 0;
         }
-        if (message.senderUuid.equals(AppData.getInstance().currentUser.uuid)) {
+        if (message.senderUuid.equals(AppData.getInstance().userUUID)) {
             // If the current user is the sender of the message
             if (message.type == 0 )
                  return 0 ;

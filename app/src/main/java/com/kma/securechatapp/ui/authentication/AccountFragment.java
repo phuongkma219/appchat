@@ -127,7 +127,7 @@ public class AccountFragment extends Fragment {
                     return ;
                 }
 
-                AppData.getInstance().currentUser = response.body().data;
+                //AppData.getInstance().currentUser = response.body().data;
                 AppData.getInstance().userUUID = response.body().data.uuid;
                 AppData.getInstance().currentTransactionId = response.body().transactionId;
                 DataService.getInstance(null).storeUserAccount( AppData.getInstance().account) ;
@@ -227,13 +227,13 @@ public class AccountFragment extends Fragment {
                 // login success
                 AppData.getInstance().setToken(response.body().data.token);
                 AppData.getInstance().setRefreshToken(response.body().data.refreshToken);
-                try {
-                    AppData.getInstance().currentUser = api.getCurrenUserInfo().execute().body().data;
-                } catch (IOException e) {
-                    return;
-                }
+//                try {
+//                   // AppData.getInstance().currentUser = api.getCurrenUserInfo().execute().body().data;
+//                } catch (IOException e) {
+//                    return;
+//                }
                 DataService.getInstance(AccountFragment.this.getContext()).storeToken(response.body().data.token,response.body().data.refreshToken);
-                DataService.getInstance(null).storeUserUuid( AppData.getInstance().currentUser.uuid);
+                //DataService.getInstance(null).storeUserUuid( AppData.getInstance().currentUser.uuid);
                 //end screen
                 DataService.getInstance(null).save();
 
@@ -256,7 +256,7 @@ public class AccountFragment extends Fragment {
             return;
         }
         Log.d("kkk", "onLoginSuccess: vào đay");
-        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
+//        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
         this.getActivity().finishActivity(0);
         this.getActivity().finish();
     }

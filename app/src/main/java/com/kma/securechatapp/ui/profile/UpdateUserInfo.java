@@ -25,6 +25,7 @@ import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.UserRegistRequest;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.helper.CommonHelper;
+import com.kma.securechatapp.repository.DataLocalManager;
 import com.kma.securechatapp.ui.authentication.createaccount.CreateAccountUserNameFragment;
 
 import java.time.LocalDateTime;
@@ -94,8 +95,8 @@ public class UpdateUserInfo extends AppCompatActivity {
         });
         getSupportActionBar().setTitle("Cập nhập thông tin tài khoản");
 
-        UserInfo currenInfo = AppData.getInstance().currentUser;
-
+//        UserInfo currenInfo = DataLocalManager.getData();
+/*
         txtFullname.setText(currenInfo.name);
         txtAddress.setText(currenInfo.address);
         txtPhoneNumber.setText(currenInfo.phone);
@@ -109,6 +110,8 @@ public class UpdateUserInfo extends AppCompatActivity {
             updateDateOfBirthInput(year, month,
                     day);
         }
+        fix sau
+ */
 
     }
 
@@ -153,7 +156,7 @@ public class UpdateUserInfo extends AppCompatActivity {
                     Toast.makeText( UpdateUserInfo.this,"Cập nhập thông tin tài khoản thất bại",Toast.LENGTH_LONG).show();
                     return;
                 }
-                AppData.getInstance().currentUser = response.body().data;
+//                AppData.getInstance().currentUser = response.body().data;
                 EventBus.getInstance().pushOnChangeProfile();
                 Toast.makeText( UpdateUserInfo.this,"Cập nhập thông tin tài khoản thành công",Toast.LENGTH_LONG).show();
             }

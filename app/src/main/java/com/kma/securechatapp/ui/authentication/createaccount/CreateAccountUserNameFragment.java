@@ -158,7 +158,7 @@ public class CreateAccountUserNameFragment extends Fragment {
 
     void addSuccess(UserRegistRequest request, AuthenResponse response) {
 
-        AppData.getInstance().currentUser = response.user;
+//        AppData.getInstance().currentUser = response.user;
         AppData.getInstance().setToken(response.token);
         AppData.getInstance().setRefreshToken(response.refreshToken);
         AppData.getInstance().account = request.username;

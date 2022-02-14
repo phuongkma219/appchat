@@ -42,10 +42,10 @@ public class Conversation {
     }
 
     public boolean isOnline(){
-        if ( AppData.getInstance().currentUser == null || users == null || users.size()<1)
+        if ( AppData.getInstance().userUUID == null || users == null || users.size()<1)
             return false;
 
-        String uuid = AppData.getInstance().currentUser.uuid;
+        String uuid = AppData.getInstance().userUUID;
         for (UserInfo u : users){
             if (!u.uuid.equals(uuid) && u.online ){
                 return true;

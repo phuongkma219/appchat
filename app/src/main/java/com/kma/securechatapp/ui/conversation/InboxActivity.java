@@ -176,7 +176,7 @@ public class InboxActivity extends AppCompatActivity implements  SocketReceiver.
                 e.printStackTrace();
             }
             // toolbar.setImageURI()
-            ImageLoader.getInstance().loadBitmap(BuildConfig.HOST + "conversation/thumb/" + conversation.UUID + "/" + AppData.getInstance().currentUser.uuid + "?width=80&height=80",bm -> {
+            ImageLoader.getInstance().loadBitmap(BuildConfig.HOST + "conversation/thumb/" + conversation.UUID + "/" + AppData.getInstance().userUUID + "?width=80&height=80",bm -> {
                 try {
                     toolbar.setLogo(new BitmapDrawable(getResources(), CircularImageView.getRoundBitmap(bm, bm.getWidth())));
                 }catch (Exception e){
@@ -422,7 +422,7 @@ public class InboxActivity extends AppCompatActivity implements  SocketReceiver.
 
     @Override
     public void onTyping(String conversationId, String userUuid, boolean typing) {
-        if (typing && !userUuid.equals(AppData.getInstance().currentUser.uuid)){
+        if (typing && !userUuid.equals(AppData.getInstance().userUUID)){
             String user = "";
             for (UserInfo u : inboxViewModel.getConversation().users){
                 if (u.uuid.equals(userUuid)){

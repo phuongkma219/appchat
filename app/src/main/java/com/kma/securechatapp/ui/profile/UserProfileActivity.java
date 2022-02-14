@@ -195,7 +195,7 @@ public class UserProfileActivity extends AppCompatActivity {
                         public void onResponse(Call<ApiResponse<UserInfo>> call, Response<ApiResponse<UserInfo>> response) {
                             if (response.body()!= null && response.body().error == 0){
                                 profileName.setText(name);
-                                AppData.getInstance().currentUser = response.body().data;
+//                                AppData.getInstance().currentUser = response.body().data;
                                 EventBus.getInstance().pushOnChangeProfile();
                             }else{
 
@@ -258,9 +258,9 @@ public class UserProfileActivity extends AppCompatActivity {
             profilePhone.setText(info.phone);
         }
 
-        if (info.getPublicKey() == null){
+       /* if (info.getPublicKey() == null){
             btnMessage.setVisibility(View.GONE);
-        }
+        }*/
     }
 
     @OnClick(R.id.profile_btn_add_del_contact)

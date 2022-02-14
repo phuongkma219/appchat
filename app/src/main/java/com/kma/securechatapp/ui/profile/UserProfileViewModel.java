@@ -74,6 +74,7 @@ public class UserProfileViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<ApiResponse<UserInfo>> call, Throwable t) {
+                t.printStackTrace();
                 userInfo.setValue(null);
             }
         });

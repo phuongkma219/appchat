@@ -102,7 +102,7 @@ public class PinCodeFragment extends Fragment {
         AppData.getInstance().password = pass;
         String privateKey = userKey.privateKey; ;
         userKey.privateKey = ""; RSAUtil.base64Encode(AES.encrypt( RSAUtil.base64Decode(userKey.privateKey) , pass));
-        DataService.getInstance(this.getContext()).storePrivateKey(AppData.getInstance().currentUser.uuid, privateKey, pass);
+//        DataService.getInstance(this.getContext()).storePrivateKey(AppData.getInstance().currentUser.uuid, privateKey, pass);
         DataService.getInstance(this.getContext()).save();
 
         try {
@@ -113,7 +113,7 @@ public class PinCodeFragment extends Fragment {
         }
         userKey.privateKey = privateKey;
         AppData.getInstance().userKey = userKey;
-        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
+//        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
         this.getActivity().finishActivity(0);
         this.getActivity().finish();
     }

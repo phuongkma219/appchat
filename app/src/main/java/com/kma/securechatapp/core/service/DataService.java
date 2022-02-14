@@ -6,6 +6,7 @@ import android.preference.PreferenceManager;
 
 import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;
+import com.kma.securechatapp.repository.DataLocalManager;
 
 public class DataService {
     private static final String SHARED_PREFERENCES_NAME = "store_msdnid";
@@ -65,12 +66,13 @@ public class DataService {
         editor.apply();
     }
     public String getToken(){
-        try {
+        /*try {
             return sharedPreferences.getString(ACCESSTOKEN_KEY, null);
         }catch (Exception e){
 
-        }
-        return null;
+        }*/
+
+        return   DataLocalManager.getToKen();
     }
 
     public String getRefreshtoken(){
@@ -96,12 +98,15 @@ public class DataService {
         return null;
     }
     public String getUserUuid(){
-        try {
+        /*try {
             return sharedPreferences.getString(USER_KEY, null);
         }catch (Exception e){
 
+        }*/
+        if (DataLocalManager.getData() == null || DataLocalManager.getData().user == null) {
+            return null;
         }
-        return null;
+        return DataLocalManager.getData().user._id ;
     }
     public String getUserAccount(){
         try {

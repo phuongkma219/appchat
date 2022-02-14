@@ -58,7 +58,7 @@ public class ChangeNewPinFragment extends Fragment {
             AppData.getInstance().password = password;
             CacheService.getInstance().changeRealmPassword(this.getContext(),AppData.getInstance().password);
             String privateKey = AppData.getInstance().userKey.privateKey;
-            DataService.getInstance(this.getContext()).storePrivateKey(AppData.getInstance().currentUser.uuid, privateKey,  AppData.getInstance().password);
+            DataService.getInstance(this.getContext()).storePrivateKey(AppData.getInstance().userUUID, privateKey,  AppData.getInstance().password);
             DataService.getInstance(this.getContext()).save();
             Toast.makeText(this.getContext(),"Đỗi mã PIN thành công", Toast.LENGTH_LONG).show();
             edit = false;

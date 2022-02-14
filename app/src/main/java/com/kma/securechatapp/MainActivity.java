@@ -29,6 +29,7 @@ import com.kma.securechatapp.core.api.model.Device;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.UserKey;
+import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.service.CacheService;
 import com.kma.securechatapp.core.service.DataService;
@@ -68,6 +69,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.Executor;
 
@@ -116,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
 
-            intent.putExtra("uuid",AppData.getInstance().currentUser.uuid);
+            intent.putExtra("uuid",AppData.getInstance().userUUID);
             intent.setAction("view_profile");
             startActivity(intent);
         }
@@ -162,6 +164,12 @@ public class MainActivity extends AppCompatActivity {
        if (DataLocalManager.getData() == null) {
            Intent intent2 = new Intent(this, LoginActivity.class);
            startActivity(intent2);
+       } else {
+           DataLogin dataLogin = DataLocalManager.getData();
+           AppData.getInstance().setToken(dataLogin.access_token);
+           AppData.getInstance().account = dataLogin.user.username;
+           AppData.getInstance().setUserUUID(dataLogin.user._id);
+           EventBus.getInstance().pushOnLogin(new UserInfo(dataLogin.user._id,dataLogin.user.username, "",0l ));
        }
       /*  }else{
             DataService.getInstance(null).save();
@@ -294,6 +302,15 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public  void onLogin(UserInfo u){
+                try {
+                    CacheService.getInstance().init(MainActivity.this, CacheService.getInstance().accountToDbName(AppData.getInstance().userUUID), "123456");
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
+//
+
 //                try {
 //                    MainActivity.this.runOnUiThread(new Runnable() {
 //                        @Override
@@ -384,9 +401,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void bindLeftHeader(Boolean reload){
-        navHeaderBind.leftUserName.setText(AppData.getInstance().currentUser.name);
+        navHeaderBind.leftUserName.setText(DataLocalManager.getData().user.full_name);
         navHeaderBind.leftUserStatus.setText("Trực tuyến");
-        ImageLoader.getInstance().DisplayImage(ImageLoader.getUserAvatarUrl(AppData.getInstance().currentUser.uuid,200,200),navHeaderBind.leftUserAvatr, reload);
+        ImageLoader.getInstance().DisplayImage(ImageLoader.getUserAvatarUrl(AppData.getInstance().userUUID,200,200),navHeaderBind.leftUserAvatr, reload);
     }
 
     void bindNavLeft(){
@@ -426,7 +443,7 @@ public class MainActivity extends AppCompatActivity {
 
     void logout(){
         DataLocalManager.clearData();
-        EventBus.getInstance().pushOnLogout(AppData.getInstance().currentUser);
+        EventBus.getInstance().pushOnLogout(null);
     }
     public void showStatus(){
         tvMainStatus.setVisibility(View.VISIBLE);

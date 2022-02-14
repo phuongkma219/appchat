@@ -51,7 +51,7 @@ public class QrCodeView extends AppCompatActivity {
     }
     String genQrString(){
             String code =  genCode();
-            String uuid = AppData.getInstance().currentUser.uuid;
+            String uuid = AppData.getInstance().userUUID;
             String hashCode =  code+"|"+uuid;
             String password = genCode();
 

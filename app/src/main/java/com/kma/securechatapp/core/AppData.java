@@ -22,7 +22,6 @@ public class AppData {
     public String currentTransactionId = "";
 
 
-     public UserInfo currentUser;
      private static AppData _instance = null;
      private AppData(){
 
@@ -72,7 +71,6 @@ public class AppData {
         this.userKey = null;
         this.token = null;
         this.privateKey = null;
-        this.currentUser = null;
         this.account = null;
         this.refreshToken = null;
         this.userUUID = null;

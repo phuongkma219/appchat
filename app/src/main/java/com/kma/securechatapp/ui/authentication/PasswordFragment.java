@@ -331,13 +331,13 @@ public class PasswordFragment extends Fragment {
                 // login success
                 AppData.getInstance().setToken(response.body().data.token);
                 AppData.getInstance().setRefreshToken(response.body().data.refreshToken);
-                try {
-                    AppData.getInstance().currentUser = api.getCurrenUserInfo().execute().body().data;
-                } catch (IOException e) {
-                    return;
-                }
+//                try {
+////                    AppData.getInstance().currentUser = api.getCurrenUserInfo().execute().body().data;
+//                } catch (IOException e) {
+//                    return;
+//                }
                 DataService.getInstance(PasswordFragment.this.getContext()).storeToken(response.body().data.token,response.body().data.refreshToken);
-                DataService.getInstance(null).storeUserUuid( AppData.getInstance().currentUser.uuid);
+//                DataService.getInstance(null).storeUserUuid( AppData.getInstance().currentUser.uuid);
                 //end screen
                 DataService.getInstance(null).save();
 
@@ -358,7 +358,7 @@ public class PasswordFragment extends Fragment {
         if (PasswordFragment.this.getActivity() == null ){
             return;
         }
-        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
+//        EventBus.getInstance().pushOnLogin(AppData.getInstance().currentUser);
         PasswordFragment.this.getActivity().finishActivity(0);
         PasswordFragment.this.getActivity().finish();
     }

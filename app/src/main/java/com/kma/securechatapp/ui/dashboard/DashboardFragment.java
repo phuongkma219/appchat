@@ -64,7 +64,7 @@ public class DashboardFragment extends Fragment {
 
 
 
-        if (AppData.getInstance().currentUser != null){
+        if (AppData.getInstance().userUUID != null){
             dashboardViewModel.triggerLoadSuggest();
 
             dashboardViewModel.trigerLoadFeeds();
