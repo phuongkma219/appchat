@@ -1,11 +1,13 @@
 package com.kma.securechatapp.ui.home.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,8 +20,11 @@ import com.kma.securechatapp.core.api.model.userprofile.Profile;
 import com.kma.securechatapp.core.api.model.userprofile.User;
 import com.kma.securechatapp.databinding.FragmentProfileIdBinding;
 import com.kma.securechatapp.helper.CommonHelper;
+import com.kma.securechatapp.ui.conversation.ConversationListFragment;
+import com.kma.securechatapp.ui.conversation.InboxActivity;
 import com.kma.securechatapp.ui.home.PostAdapter;
 import com.kma.securechatapp.ui.post_details.PostDetailViewModel;
+import com.kma.securechatapp.ui.profile.UserProfileViewModel;
 
 import java.util.List;
 
@@ -27,11 +32,11 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
 
     private boolean isLastPage = false;
     private int currentPage = 0;
-    private UserProfileViewModel model;
+    private UserPViewModel model;
     private PostAdapter postAdapter;
     private PostX post;
     private NavController navController;
-
+    UserProfileViewModel userProfileViewModel;
     @Override
     public int getLayoutId() {
         return R.layout.fragment_profile_id;
@@ -48,7 +53,7 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
         postAdapter = new PostAdapter();
         CommonHelper.showLoading(this.getContext());
         binding.rcPost.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        model = new UserProfileViewModel();
+        model = new UserPViewModel();
         if(getArguments()!=null){
              post = getArguments().getParcelable("profileDetail");
             model.getUserPost(post.user_id,Integer.toString(0));
@@ -63,7 +68,7 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
         }
 
 
-        model=new UserProfileViewModel();
+        model=new UserPViewModel();
         model.getDataById(post.user_id);
         model.dataUser.observe(getViewLifecycleOwner(), new Observer<User>() {
             @Override
@@ -76,7 +81,9 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
         model.dataProfile.observe(getViewLifecycleOwner(), new Observer<Profile>() {
             @Override
             public void onChanged(Profile profile) {
-                binding.setProfile(profile.getData());
+                if(profile!=null){
+                    binding.setProfile(profile.getData());
+                }
             }
         });
 
@@ -125,6 +132,19 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
         });
 
     binding.tvMore.setOnClickListener(this);
+    binding.btnMessage.setOnClickListener(this);
+        userProfileViewModel =  ViewModelProviders.of(this).get(UserProfileViewModel.class);
+        userProfileViewModel.trigerCheckHasContact(post.user_id);
+
+        userProfileViewModel.getConversion().observe(this, conversation -> {
+            Log.d("hihi", "onClick: ");
+            if (conversation!= null) {
+                Intent intent1 = new Intent(this.getActivity(), InboxActivity.class);
+                intent1.putExtra("uuid", conversation.UUID);
+                Log.d("hihi", "onClick: "+conversation.UUID);
+                startActivity(intent1);
+            }
+        });
     }
     private void loadMore() {
         currentPage += 1;
@@ -147,10 +167,19 @@ public class UserProfileFragment extends BaseFragment<FragmentProfileIdBinding> 
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.tvMore){
-            Bundle bundle = new Bundle();
-            bundle.putString("more_profile", post.user_id);
-            navController.navigate(R.id.action_user_profile_to_more_profile, bundle);
+        switch (v.getId()){
+            case R.id.tvMore: {
+                Bundle bundle = new Bundle();
+                bundle.putString("more_profile", post.user_id);
+                navController.navigate(R.id.action_user_profile_to_more_profile, bundle);
+                break;
+            }
+            case R.id.btnMessage:{
+
+                userProfileViewModel.trigerConversation(post.user_id);
+                break;
+            }
+
         }
 
     }

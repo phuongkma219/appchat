@@ -2,8 +2,6 @@ package com.kma.securechatapp.ui.home;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -17,11 +15,6 @@ import com.kma.securechatapp.repository.DataLocalManager;
 
 import java.util.List;
 
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.Scheduler;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

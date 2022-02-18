@@ -1,27 +1,10 @@
 package com.kma.securechatapp.core.security;
 
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.model.Message;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
-import com.kma.securechatapp.core.api.model.UserCryMessage;
 
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
-import java.security.PublicKey;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 
 
 public class SecureChatSystem {

@@ -1,28 +1,19 @@
 package com.kma.securechatapp.ui.home.profile;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Observer;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.base.BaseFragment;
-import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.core.api.model.userprofile.Profile;
 import com.kma.securechatapp.core.api.model.userprofile.User;
 import com.kma.securechatapp.databinding.FragmentMoreProfileByIdBinding;
-import com.kma.securechatapp.helper.CommonHelper;
-
-import java.util.List;
 
 public class MoreProfileFragment extends BaseFragment<FragmentMoreProfileByIdBinding> {
 
 
-    private UserProfileViewModel model;
+    private UserPViewModel model;
     private String id;
 
     @Override
@@ -46,7 +37,7 @@ public class MoreProfileFragment extends BaseFragment<FragmentMoreProfileByIdBin
         });
 
 
-        model = new UserProfileViewModel();
+        model = new UserPViewModel();
         model.getDataById(id);
         model.dataUser.observe(getViewLifecycleOwner(), new Observer<User>() {
             @Override
@@ -59,7 +50,9 @@ public class MoreProfileFragment extends BaseFragment<FragmentMoreProfileByIdBin
         model.dataProfile.observe(getViewLifecycleOwner(), new Observer<Profile>() {
             @Override
             public void onChanged(Profile profile) {
-                binding.setProfile(profile.getData());
+                if(profile!=null){
+                    binding.setProfile(profile.getData());
+                }
             }
         });
     }

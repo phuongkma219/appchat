@@ -15,17 +15,12 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.chaos.view.PinView;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
-import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.security.RSAUtil;
 import com.kma.securechatapp.core.service.CacheService;
 import com.kma.securechatapp.core.service.DataService;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-import java.security.PrivateKey;
-import java.security.PublicKey;
 
 public class ChangeNewPinFragment extends Fragment {
     @BindView(R.id.btn_done)

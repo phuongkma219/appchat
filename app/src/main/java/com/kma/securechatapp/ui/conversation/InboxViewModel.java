@@ -12,9 +12,7 @@ import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.Conversation;
-import com.kma.securechatapp.core.api.model.Message;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
-import com.kma.securechatapp.core.api.model.PageResponse;
 import com.kma.securechatapp.core.api.model.UserConversation;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.realm_model.RMessage;
@@ -24,15 +22,10 @@ import com.kma.securechatapp.core.service.CacheService;
 import com.kma.securechatapp.core.service.RealtimeServiceConnection;
 
 import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 
 import io.realm.RealmChangeListener;

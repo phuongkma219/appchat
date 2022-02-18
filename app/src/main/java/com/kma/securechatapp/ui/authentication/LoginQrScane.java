@@ -1,11 +1,6 @@
 package com.kma.securechatapp.ui.authentication;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.NavController;
-
 import android.content.Intent;
-import android.graphics.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,23 +9,22 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import com.google.gson.Gson;
-import com.kma.securechatapp.MainActivity;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
-import com.kma.securechatapp.core.MessageCommand;
 import com.kma.securechatapp.core.SocketLoginCommand;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.SocketLoginDTO;
 import com.kma.securechatapp.core.api.model.SocketLoginTranferData;
-import com.kma.securechatapp.core.api.model.SocketMessageCommand;
 import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.event.EventQrCodeMessage;
 import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;

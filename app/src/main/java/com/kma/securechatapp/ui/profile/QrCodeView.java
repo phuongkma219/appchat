@@ -1,12 +1,12 @@
 package com.kma.securechatapp.ui.profile;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.gson.Gson;
 import com.kma.securechatapp.R;
@@ -18,7 +18,6 @@ import com.kma.securechatapp.core.event.EventQrCodeMessage;
 import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;
 import com.kma.securechatapp.core.service.DataService;
-import com.kma.securechatapp.core.service.RealtimeService;
 import com.kma.securechatapp.core.service.RealtimeServiceConnection;
 import com.kma.securechatapp.helper.CommonHelper;
 

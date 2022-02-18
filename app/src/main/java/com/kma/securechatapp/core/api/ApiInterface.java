@@ -1,7 +1,5 @@
 package com.kma.securechatapp.core.api;
 
-import android.database.Observable;
-
 import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.AuthenRequest;
 import com.kma.securechatapp.core.api.model.AuthenResponse;
@@ -19,7 +17,6 @@ import com.kma.securechatapp.core.api.model.VerifyRegister;
 import java.util.List;
 
 import okhttp3.MultipartBody;
-import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;

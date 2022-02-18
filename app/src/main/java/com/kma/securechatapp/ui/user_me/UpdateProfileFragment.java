@@ -1,10 +1,7 @@
 package com.kma.securechatapp.ui.user_me;
 
 import android.app.AlertDialog;
-import android.util.Log;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
@@ -58,8 +55,10 @@ public class UpdateProfileFragment extends BaseFragment<FragmentUpdateProfileBin
         profileViewModel.dataUserProfile.observe(getViewLifecycleOwner(), new Observer<Profile>() {
             @Override
             public void onChanged(Profile profile) {
-
+            if(profile!=null){
                 binding.setProfile(profile.getData());
+
+            }
             }
         });
 

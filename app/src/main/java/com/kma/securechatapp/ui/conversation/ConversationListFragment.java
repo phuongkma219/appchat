@@ -3,6 +3,7 @@ package com.kma.securechatapp.ui.conversation;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,6 @@ import com.kma.securechatapp.adapter.ConversationAdapter;
 import com.kma.securechatapp.core.api.model.Conversation;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.ui.control.suggestview.OnlineView;
-import com.kma.securechatapp.ui.control.suggestview.SuggestView;
 import com.kma.securechatapp.utils.misc.EndlessRecyclerOnScrollListener;
 import com.kma.securechatapp.utils.misc.RecyclerItemClickListener;
 
@@ -86,6 +86,7 @@ public class ConversationListFragment extends Fragment implements SwipeRefreshLa
                         Conversation conversation = conversationAdapter.getConversationList().get(position);
                         Intent intent1 = new Intent(ConversationListFragment.this.getContext(), InboxActivity.class);
                         intent1.putExtra("uuid", conversation.UUID);
+                        Log.d("conversation", "onItemClick: "+ conversation.UUID);
                         startActivity(intent1);
                     }
 

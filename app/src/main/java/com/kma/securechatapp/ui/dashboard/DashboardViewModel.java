@@ -8,7 +8,6 @@ import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.SocialApiInterface;
 import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.AuthenResponse;
 import com.kma.securechatapp.core.api.model.Feed;
 import com.kma.securechatapp.core.api.model.UserInfo;
 

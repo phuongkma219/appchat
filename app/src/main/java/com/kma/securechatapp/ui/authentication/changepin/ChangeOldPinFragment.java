@@ -12,10 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-
 import com.chaos.view.PinView;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
@@ -25,6 +21,10 @@ import com.kma.securechatapp.core.service.DataService;
 
 import java.security.PrivateKey;
 import java.security.PublicKey;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ChangeOldPinFragment extends Fragment {
     @BindView(R.id.btn_done)

@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kma.securechatapp.adapter.viewholder.MessageReceivederViewHolder;
-import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.R;
+import com.kma.securechatapp.adapter.viewholder.MessageReceivederViewHolder;
 import com.kma.securechatapp.adapter.viewholder.MessageSenderViewHolder;
+import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
 import com.kma.securechatapp.utils.common.StringHelper;
 

@@ -2,7 +2,6 @@ package com.kma.securechatapp.ui.conversation;
 
 import android.widget.Toast;
 
-import androidx.annotation.UiThread;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -17,12 +16,8 @@ import com.kma.securechatapp.core.realm_model.RConversation;
 import com.kma.securechatapp.core.service.CacheService;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
-import io.realm.OrderedCollectionChangeSet;
-import io.realm.OrderedRealmCollectionChangeListener;
 import io.realm.RealmChangeListener;
 import io.realm.RealmResults;
 import retrofit2.Call;

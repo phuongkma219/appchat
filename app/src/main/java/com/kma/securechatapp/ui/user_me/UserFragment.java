@@ -1,18 +1,14 @@
 package com.kma.securechatapp.ui.user_me;
 
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.base.BaseFragment;
 import com.kma.securechatapp.core.api.model.post.Post;
@@ -20,13 +16,11 @@ import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.core.api.model.post.UserX;
 import com.kma.securechatapp.core.api.model.userprofile.Profile;
 import com.kma.securechatapp.core.api.model.userprofile.User;
-import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.databinding.FragmentUserBinding;
 import com.kma.securechatapp.helper.CommonHelper;
 import com.kma.securechatapp.repository.DataLocalManager;
 import com.kma.securechatapp.ui.home.PostAdapter;
-import com.kma.securechatapp.ui.home.profile.UserProfileViewModel;
-import com.kma.securechatapp.ui.login.MySharePreferences;
+import com.kma.securechatapp.ui.home.profile.UserPViewModel;
 
 import java.util.List;
 
@@ -36,7 +30,7 @@ public class UserFragment extends BaseFragment<FragmentUserBinding> implements V
 
     private UserViewModel userViewModel;
     private ProfileViewModel profileViewModel;
-    private UserProfileViewModel userProfileViewModel;
+    private UserPViewModel userProfileViewModel;
     private NavController navController;
     private UserX user;
     private  PostAdapter postAdapter;
@@ -83,10 +77,9 @@ public class UserFragment extends BaseFragment<FragmentUserBinding> implements V
 
             }
         });
-        userProfileViewModel = new UserProfileViewModel();
+        userProfileViewModel = new UserPViewModel();
         postAdapter = new PostAdapter();
         binding.rcPost.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        Log.d("kkk", "initBinding: "+ user._id);
         userProfileViewModel.getUserPost(user._id,Integer.toString(0));
         userProfileViewModel.posts.observe(getViewLifecycleOwner(), new Observer<List<PostX>>() {
             @Override
@@ -151,14 +144,10 @@ public class UserFragment extends BaseFragment<FragmentUserBinding> implements V
 //                Bundle bundle=new Bundle();
 //                bundle.putString("userId",);
                 navController.navigate(R.id.action_user_fragment_to_profile_fragment);
-                Log.d("kkk", "onClick: tvMore");
-
                 break;
             }
             case R.id.btn_creat:{
                 navController.navigate(R.id.action_user_fragment_to_createPostFragment);
-                Log.d("kkk", "onClick: btn_creat");
-
                 break;
             }
 

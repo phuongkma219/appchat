@@ -1,18 +1,11 @@
 package com.kma.securechatapp.ui.profile;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.lifecycle.ViewModelProviders;
-
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -23,17 +16,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.google.android.material.textfield.TextInputEditText;
-import com.kma.securechatapp.BuildConfig;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.Contact;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.event.EventBus;
-import com.kma.securechatapp.core.service.RealtimeServiceConnection;
-import com.kma.securechatapp.helper.ImageLoadTask;
-import com.kma.securechatapp.ui.contact.ContactListFragment;
 import com.kma.securechatapp.ui.conversation.InboxActivity;
 import com.kma.securechatapp.utils.common.ImageLoader;
 import com.kma.securechatapp.utils.common.Utils;
@@ -50,10 +42,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class UserProfileActivity extends AppCompatActivity {
 

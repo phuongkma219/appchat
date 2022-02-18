@@ -17,8 +17,8 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.chaos.view.PinView;
 import com.google.android.material.textfield.TextInputEditText;
-import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.R;
+import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
@@ -27,16 +27,11 @@ import com.kma.securechatapp.core.api.model.AuthenResponse;
 import com.kma.securechatapp.core.api.model.Device;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.security.RSAUtil;
-import com.kma.securechatapp.core.service.CacheService;
 import com.kma.securechatapp.core.service.DataService;
 import com.kma.securechatapp.helper.CommonHelper;
-import com.kma.securechatapp.ui.profile.QrCodeView;
-import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.common.Utils;
 
-import java.io.IOException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 

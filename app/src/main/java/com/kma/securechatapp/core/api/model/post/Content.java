@@ -1,8 +1,5 @@
 package com.kma.securechatapp.core.api.model.post;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
 import java.util.List;
 
 public class Content {

@@ -16,13 +16,11 @@ import android.os.IBinder;
 import android.provider.Settings;
 import android.util.Log;
 
-
 import androidx.core.app.NotificationCompat;
 
 import com.google.gson.Gson;
 import com.kma.securechatapp.BuildConfig;
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.MessageCommand;
 import com.kma.securechatapp.core.SocketLoginCommand;
 import com.kma.securechatapp.core.api.UnsafeOkHttpClient;
@@ -30,21 +28,13 @@ import com.kma.securechatapp.core.api.model.Message;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
 import com.kma.securechatapp.core.api.model.SocketLoginDTO;
 import com.kma.securechatapp.core.api.model.SocketMessageCommand;
-import com.kma.securechatapp.core.api.model.UserCryMessage;
-import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.event.EventQrCodeMessage;
 import com.kma.securechatapp.core.security.SecureChatSystem;
 import com.kma.securechatapp.ui.conversation.InboxActivity;
 
-import org.reactivestreams.Subscription;
-
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.prefs.Preferences;
 
 import io.reactivex.CompletableTransformer;
 import io.reactivex.android.schedulers.AndroidSchedulers;

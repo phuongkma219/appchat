@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.viewholder.StickerItemViewHolder;
-import com.kma.securechatapp.adapter.viewholder.StikerListViewHolder;
 
 public class StickerItemAdapter  extends RecyclerView.Adapter {
     public String model;

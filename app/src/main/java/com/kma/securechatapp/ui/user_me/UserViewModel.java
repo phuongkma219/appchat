@@ -5,7 +5,6 @@ import android.util.Log;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-
 import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.core.api.model.upload_imgae.AvatarUpload;
 import com.kma.securechatapp.core.api.model.userprofile.DataUser;

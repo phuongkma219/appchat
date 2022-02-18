@@ -9,7 +9,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.helper.ImageLoadTask;
 import com.kma.securechatapp.utils.common.ImageLoader;
 
 import butterknife.BindView;

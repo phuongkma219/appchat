@@ -1,7 +1,5 @@
 package com.kma.securechatapp.ui.login.create_account;
 
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -15,7 +13,6 @@ import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.base.BaseFragment;
 import com.kma.securechatapp.core.api.model.post.BaseApiRespone;
-import com.kma.securechatapp.core.api.model.userprofile.register.ResponseRegister;
 import com.kma.securechatapp.core.api.model.userprofile.register.UserRegister;
 import com.kma.securechatapp.databinding.LayoutRegisterBinding;
 import com.kma.securechatapp.repository.ApiRetrofit;

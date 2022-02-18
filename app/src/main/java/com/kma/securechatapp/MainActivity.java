@@ -1,56 +1,17 @@
 package com.kma.securechatapp;
 
-import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.os.StrictMode;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
-import com.kma.securechatapp.core.AppData;
-import com.kma.securechatapp.core.api.ApiInterface;
-import com.kma.securechatapp.core.api.ApiUtil;
-import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.AuthenRequest;
-import com.kma.securechatapp.core.api.model.Device;
-import com.kma.securechatapp.core.api.model.MessagePlaneText;
-import com.kma.securechatapp.core.api.model.UserInfo;
-import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
-import com.kma.securechatapp.core.event.EventBus;
-import com.kma.securechatapp.core.service.CacheService;
-import com.kma.securechatapp.core.service.DataService;
-import com.kma.securechatapp.core.service.RealtimeService;
-import com.kma.securechatapp.core.service.RealtimeServiceConnection;
-import com.kma.securechatapp.helper.CommonHelper;
-import com.kma.securechatapp.repository.DataLocalManager;
-import com.kma.securechatapp.ui.about.AboutActivity;
-import com.kma.securechatapp.ui.authentication.KeyPasswordActivity;
-import com.kma.securechatapp.ui.authentication.LoginActivity;
-import com.kma.securechatapp.ui.authentication.changepin.ChangePinActivity;
-import com.kma.securechatapp.ui.contact.ContactAddActivity;
-import com.kma.securechatapp.ui.home.HomeFragment;
-import com.kma.securechatapp.ui.login.MySharePreferences;
-import com.kma.securechatapp.ui.post_details.PostDetaillFragment;
-import com.kma.securechatapp.ui.profile.SettingsActivity;
-import com.kma.securechatapp.ui.profile.UserProfileActivity;
-import com.kma.securechatapp.utils.common.EncryptFileLoader;
-import com.kma.securechatapp.utils.common.GFingerPrint;
-import com.kma.securechatapp.utils.common.ImageLoader;
-import com.kma.securechatapp.utils.common.Utils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -58,17 +19,35 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.biometric.BiometricPrompt;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import java.io.IOException;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
+import com.kma.securechatapp.core.AppData;
+import com.kma.securechatapp.core.api.ApiInterface;
+import com.kma.securechatapp.core.api.ApiUtil;
+import com.kma.securechatapp.core.api.model.UserInfo;
+import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
+import com.kma.securechatapp.core.event.EventBus;
+import com.kma.securechatapp.core.service.CacheService;
+import com.kma.securechatapp.core.service.DataService;
+import com.kma.securechatapp.core.service.RealtimeService;
+import com.kma.securechatapp.core.service.RealtimeServiceConnection;
+import com.kma.securechatapp.repository.DataLocalManager;
+import com.kma.securechatapp.ui.about.AboutActivity;
+import com.kma.securechatapp.ui.authentication.KeyPasswordActivity;
+import com.kma.securechatapp.ui.authentication.LoginActivity;
+import com.kma.securechatapp.ui.authentication.changepin.ChangePinActivity;
+import com.kma.securechatapp.ui.profile.UserProfileActivity;
+import com.kma.securechatapp.utils.common.EncryptFileLoader;
+import com.kma.securechatapp.utils.common.GFingerPrint;
+import com.kma.securechatapp.utils.common.ImageLoader;
+
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.Executor;
@@ -78,15 +57,6 @@ import javax.crypto.Cipher;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.INTERNET;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.RECORD_AUDIO;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -184,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard,R.id.navigation_conversation, R.id.navigation_notifications)
+                R.id.navigation_home, R.id.navigation_dashboard,R.id.navigation_conversation, R.id.navigation_profile)
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);

@@ -1,40 +1,30 @@
 package com.kma.securechatapp.ui.conversation.Inbox;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.adapter.MessageAdapter;
 import com.kma.securechatapp.adapter.StickerItemAdapter;
 import com.kma.securechatapp.adapter.StickerListAdapter;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.MessagePlaneText;
 import com.kma.securechatapp.core.api.model.Sticker;
-import com.kma.securechatapp.core.api.model.UserInfo;
-import com.kma.securechatapp.ui.contact.ContactAddActivity;
 import com.kma.securechatapp.ui.conversation.InboxActivity;
-import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.misc.RecyclerItemClickListener;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnTouch;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

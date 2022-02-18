@@ -1,9 +1,6 @@
 package com.kma.securechatapp.core.realm_model;
 
-import com.google.gson.annotations.SerializedName;
-import com.kma.securechatapp.core.api.model.Conversation;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
-import com.kma.securechatapp.core.api.model.UserInfo;
 
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;

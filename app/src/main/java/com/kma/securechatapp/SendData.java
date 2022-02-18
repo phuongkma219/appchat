@@ -2,7 +2,6 @@ package com.kma.securechatapp;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.kma.securechatapp.core.api.model.post.Data;
 import com.kma.securechatapp.core.api.model.post.PostX;
 
 import org.jetbrains.annotations.NotNull;

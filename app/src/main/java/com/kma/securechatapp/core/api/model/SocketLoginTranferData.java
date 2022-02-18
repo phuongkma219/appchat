@@ -1,7 +1,6 @@
 package com.kma.securechatapp.core.api.model;
 
 import com.google.gson.annotations.SerializedName;
-import com.kma.securechatapp.core.MessageCommand;
 
 import java.io.Serializable;
 

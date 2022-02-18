@@ -1,9 +1,7 @@
 package com.kma.securechatapp.core;
 
-import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.UserKey;
 import com.kma.securechatapp.core.security.RSAUtil;
-import com.kma.securechatapp.core.service.DataService;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;

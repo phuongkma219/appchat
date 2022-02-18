@@ -9,13 +9,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.OnlineViewAdapter;
-import com.kma.securechatapp.adapter.SuggestViewAdapter;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.Contact;
 import com.kma.securechatapp.core.api.model.Conversation;
-import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.ui.conversation.InboxActivity;
 import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.misc.RecyclerItemClickListener;

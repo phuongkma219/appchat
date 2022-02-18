@@ -8,17 +8,14 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.utils.common.EncryptFileLoader;
 
 import java.io.File;
-import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 

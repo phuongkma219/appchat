@@ -1,10 +1,5 @@
 package com.kma.securechatapp.ui.control;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,9 +7,12 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.utils.common.EncryptFileLoader;
-import com.kma.securechatapp.utils.common.ImageLoader;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

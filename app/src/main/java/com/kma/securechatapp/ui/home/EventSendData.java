@@ -1,9 +1,6 @@
 package com.kma.securechatapp.ui.home;
 
-import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
-import com.kma.securechatapp.core.api.model.userprofile.login.UserLogin;
-import com.kma.securechatapp.core.event.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;

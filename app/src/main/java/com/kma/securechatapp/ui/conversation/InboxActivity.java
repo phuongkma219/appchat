@@ -1,68 +1,48 @@
 package com.kma.securechatapp.ui.conversation;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProviders;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.view.View.GONE;
+import static butterknife.OnTextChanged.Callback.BEFORE_TEXT_CHANGED;
 
-import android.Manifest;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.IBinder;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProviders;
+
 import com.kma.securechatapp.BuildConfig;
-import com.kma.securechatapp.MainActivity;
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.adapter.MessageAdapter;
 import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.MessageCommand;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.Conversation;
 import com.kma.securechatapp.core.api.model.MessagePlaneText;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.receivers.SocketReceiver;
-import com.kma.securechatapp.core.service.RealtimeService;
 import com.kma.securechatapp.core.service.RealtimeServiceConnection;
 import com.kma.securechatapp.core.service.ServiceAction;
 import com.kma.securechatapp.helper.FileUtils;
-import com.kma.securechatapp.ui.contact.ContactAddViewModel;
 import com.kma.securechatapp.ui.conversation.Inbox.ChatFragment;
-import com.kma.securechatapp.ui.conversation.Inbox.StickerFragment;
-import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.common.AudioRecorder;
 import com.kma.securechatapp.utils.common.EncryptFileLoader;
 import com.kma.securechatapp.utils.common.ImageLoader;
@@ -71,30 +51,18 @@ import com.kma.securechatapp.utils.misc.CircularImageView;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnFocusChange;
 import butterknife.OnTextChanged;
-import butterknife.OnTouch;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.INTERNET;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.RECORD_AUDIO;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.view.View.GONE;
-import static butterknife.OnTextChanged.Callback.BEFORE_TEXT_CHANGED;
 
 public class InboxActivity extends AppCompatActivity implements  SocketReceiver.OnSocketMessageListener{
 

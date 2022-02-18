@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,17 +17,14 @@ import com.kma.securechatapp.R;
 import com.kma.securechatapp.base.BaseFragment;
 import com.kma.securechatapp.core.api.model.comment.PostComment;
 import com.kma.securechatapp.core.api.model.post.Content;
-import com.kma.securechatapp.core.api.model.post.Post;
 import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.core.api.model.post.UserX;
 import com.kma.securechatapp.core.api.model.upload_imgae.ItemImage;
 import com.kma.securechatapp.core.api.model.userprofile.User;
-import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.databinding.FragmentPostDetailBinding;
 import com.kma.securechatapp.helper.CommonHelper;
 import com.kma.securechatapp.repository.DataLocalManager;
 import com.kma.securechatapp.ui.home.HomeViewModel;
-import com.kma.securechatapp.ui.login.MySharePreferences;
 import com.kma.securechatapp.ui.user_me.UserViewModel;
 import com.kma.securechatapp.utils.Utils;
 

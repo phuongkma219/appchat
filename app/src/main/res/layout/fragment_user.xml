@@ -71,37 +71,23 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_creat"
                     android:layout_width="0dp"
-                    android:theme="@style/Theme.MaterialComponents"
+                    android:layout_marginStart="48dp"
+
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_marginEnd="48dp"
                     android:backgroundTint="@color/bg_sys"
                     android:text="Đăng bài"
                     android:textAllCaps="false"
+                    android:theme="@style/Theme.MaterialComponents"
                     app:cornerRadius="12dp"
                     app:icon="@drawable/plus_circle_outline"
                     app:iconGravity="textStart"
-                    app:layout_constraintEnd_toStartOf="@id/btnMessage"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/txtName" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMessage"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:backgroundTint="#44C63A"
-                    android:text="Nhắn tin"
-                    android:theme="@style/Theme.MaterialComponents"
-                    android:textAllCaps="false"
-                    app:cornerRadius="12dp"
-                    app:icon="@drawable/ic_baseline_message_24"
-                    app:iconGravity="textStart"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/btn_creat"
-                    app:layout_constraintTop_toBottomOf="@id/txtName" />
+
 
 
                 <View

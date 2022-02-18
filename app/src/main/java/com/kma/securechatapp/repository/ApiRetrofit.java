@@ -2,8 +2,6 @@ package com.kma.securechatapp.repository;
 
 import org.jetbrains.annotations.NotNull;
 
-import io.realm.log.LogLevel;
-import kotlin.jvm.internal.Intrinsics;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Converter;

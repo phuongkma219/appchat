@@ -1,7 +1,6 @@
 package com.kma.securechatapp.ui.home;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -12,8 +11,6 @@ import com.kma.securechatapp.base.BaseListener;
 import com.kma.securechatapp.base.BaseViewHolder;
 import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.databinding.ItemPostBinding;
-import com.kma.securechatapp.ui.home.HomeViewModel;
-import com.kma.securechatapp.ui.login.MySharePreferences;
 
 public class PostAdapter extends BaseAdapter<PostX> {
     public PostAdapter() {

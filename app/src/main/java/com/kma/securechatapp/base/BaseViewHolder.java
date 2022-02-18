@@ -5,8 +5,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
-import kotlin.jvm.internal.Intrinsics;
-
 public class BaseViewHolder extends RecyclerView.ViewHolder {
     @NotNull
     public ViewDataBinding binding;

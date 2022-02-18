@@ -5,7 +5,6 @@ import android.app.AlertDialog;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,7 +21,6 @@ import com.kma.securechatapp.core.api.model.userprofile.User;
 import com.kma.securechatapp.databinding.FragmentProfileBinding;
 import com.kma.securechatapp.helper.CommonHelper;
 import com.kma.securechatapp.repository.DataLocalManager;
-
 
 import java.io.File;
 import java.io.IOException;

@@ -1,7 +1,6 @@
 package com.kma.securechatapp.repository;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.core.api.model.post.UserX;

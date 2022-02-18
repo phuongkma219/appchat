@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class UserProfileViewModel extends ViewModel {
+public class UserPViewModel extends ViewModel {
     public MutableLiveData<Post> data;
     public MutableLiveData<List<PostX>> posts;
     private ApiService api;
@@ -32,7 +32,7 @@ public class UserProfileViewModel extends ViewModel {
     private static final String TAG = "UserProfileViewModel";
     private String token;
 
-    public UserProfileViewModel() {
+    public UserPViewModel() {
         dataAvatar = new MutableLiveData<AvatarUpload>();
         dataUser = new MutableLiveData<>();
         dataProfile = new MutableLiveData<>();

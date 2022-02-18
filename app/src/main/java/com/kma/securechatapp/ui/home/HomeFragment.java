@@ -1,7 +1,6 @@
 package com.kma.securechatapp.ui.home;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.lifecycle.Observer;
@@ -17,12 +16,9 @@ import com.kma.securechatapp.core.api.model.post.Post;
 import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.core.api.model.post.UserX;
 import com.kma.securechatapp.core.api.model.userprofile.User;
-import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.databinding.FragmentHomeBinding;
 import com.kma.securechatapp.helper.CommonHelper;
 import com.kma.securechatapp.repository.DataLocalManager;
-import com.kma.securechatapp.ui.login.LoginFragment;
-import com.kma.securechatapp.ui.login.MySharePreferences;
 import com.kma.securechatapp.ui.post_details.PostDetailViewModel;
 import com.kma.securechatapp.ui.user_me.UserViewModel;
 import com.kma.securechatapp.utils.Utils;

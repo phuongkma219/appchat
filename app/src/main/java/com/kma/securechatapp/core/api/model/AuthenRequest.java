@@ -1,7 +1,5 @@
 package com.kma.securechatapp.core.api.model;
 
-import android.hardware.biometrics.BiometricPrompt;
-
 import com.google.gson.annotations.SerializedName;
 
 public class AuthenRequest{

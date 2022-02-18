@@ -40,10 +40,10 @@
         tools:layout="@layout/fragment_conversation" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.kma.securechatapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_profile"
+        android:name="com.kma.securechatapp.ui.user_me.UserFragment"
+        android:label="@string/trang_ca_nhan"
+        tools:layout="@layout/fragment_user" />
     <fragment
         android:id="@+id/postDetaillFragment"
         android:name="com.kma.securechatapp.ui.post_details.PostDetaillFragment"

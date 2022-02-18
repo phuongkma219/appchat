@@ -1,32 +1,23 @@
 package com.kma.securechatapp.ui.authentication;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import com.chaos.view.PinView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
-import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.api.model.VerifyRegister;
-import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;
 import com.kma.securechatapp.core.service.DataService;
-import com.kma.securechatapp.helper.CommonHelper;
-import com.kma.securechatapp.ui.authentication.createaccount.CreateAccountValidateFragment;
 
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
@@ -34,9 +25,6 @@ import java.security.NoSuchAlgorithmException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class PinCodeFragment extends Fragment {
 

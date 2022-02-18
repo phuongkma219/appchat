@@ -2,18 +2,13 @@ package com.kma.securechatapp.ui.profile;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.kma.securechatapp.R;
@@ -22,15 +17,10 @@ import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.UserInfo;
-import com.kma.securechatapp.core.api.model.UserRegistRequest;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.helper.CommonHelper;
-import com.kma.securechatapp.repository.DataLocalManager;
-import com.kma.securechatapp.ui.authentication.createaccount.CreateAccountUserNameFragment;
 
-import java.time.LocalDateTime;
 import java.util.Calendar;
-import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

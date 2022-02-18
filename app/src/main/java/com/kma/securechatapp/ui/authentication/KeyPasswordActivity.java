@@ -2,47 +2,30 @@ package com.kma.securechatapp.ui.authentication;
 
 import android.app.DownloadManager;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.ui.NavigationUI;
 
 import com.chaos.view.PinView;
-import com.google.android.material.textfield.TextInputEditText;
 import com.kma.securechatapp.MainActivity;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.ApiInterface;
 import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.event.EventBus;
-import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;
 import com.kma.securechatapp.core.service.DataService;
-import com.kma.securechatapp.helper.FileUtils;
-import com.kma.securechatapp.utils.common.FileCache;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
 import java.security.PublicKey;
-import java.security.spec.InvalidKeySpecException;
-
-import javax.crypto.BadPaddingException;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

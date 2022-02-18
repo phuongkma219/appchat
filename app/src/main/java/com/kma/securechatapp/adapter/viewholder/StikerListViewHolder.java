@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kma.securechatapp.BuildConfig;
 import com.kma.securechatapp.core.api.model.Sticker;
 import com.kma.securechatapp.utils.common.ImageLoader;
 

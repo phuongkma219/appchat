@@ -7,10 +7,7 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 
 import com.kma.securechatapp.core.MessageCommand;
-import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.event.EventQrCodeMessage;
-
-import java.util.List;
 
 import io.reactivex.disposables.Disposable;
 

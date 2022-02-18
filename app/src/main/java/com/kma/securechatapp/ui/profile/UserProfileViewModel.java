@@ -1,20 +1,16 @@
 package com.kma.securechatapp.ui.profile;
 
-import android.widget.ImageView;
-import android.widget.Toast;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.kma.securechatapp.core.api.ApiInterface;
-import com.kma.securechatapp.core.api.ApiUtil; 
+import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.ApiResponse;
 import com.kma.securechatapp.core.api.model.Contact;
 import com.kma.securechatapp.core.api.model.Conversation;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.service.CacheService;
-import com.kma.securechatapp.core.service.RealtimeServiceConnection;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;

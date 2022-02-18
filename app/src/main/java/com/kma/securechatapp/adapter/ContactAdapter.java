@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kma.securechatapp.BuildConfig;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.viewholder.ContactViewHolder;
 import com.kma.securechatapp.core.api.model.Contact;

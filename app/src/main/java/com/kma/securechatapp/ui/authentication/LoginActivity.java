@@ -1,10 +1,8 @@
 package com.kma.securechatapp.ui.authentication;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
@@ -12,22 +10,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.view.KeyEvent;
-
 import com.kma.securechatapp.AppPermission;
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.core.AppData;
-import com.kma.securechatapp.core.api.ApiInterface;
-import com.kma.securechatapp.core.api.ApiUtil;
-import com.kma.securechatapp.core.api.model.ApiResponse;
-import com.kma.securechatapp.core.api.model.UserKey;
-import com.kma.securechatapp.core.service.DataService;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 

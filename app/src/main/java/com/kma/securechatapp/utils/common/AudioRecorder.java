@@ -1,12 +1,11 @@
 package com.kma.securechatapp.utils.common;
 
-import java.io.File;
-import java.io.IOException;
-
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
-import android.os.Environment;
+
+import java.io.File;
+import java.io.IOException;
 
 public class AudioRecorder {
 

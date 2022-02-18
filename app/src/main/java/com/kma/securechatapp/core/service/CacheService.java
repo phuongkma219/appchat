@@ -17,7 +17,6 @@ import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.core.realm_model.RConversation;
 import com.kma.securechatapp.core.realm_model.RMessage;
 import com.kma.securechatapp.core.realm_model.RUserInfo;
-import com.kma.securechatapp.core.security.AES;
 import com.kma.securechatapp.core.security.RSAUtil;
 import com.kma.securechatapp.core.security.SecureChatSystem;
 import com.kma.securechatapp.helper.FileUtils;

@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
-import com.kma.securechatapp.core.api.model.userprofile.login.UserLogin;
 
 public class MySharePreferences {
     private String MY_SHARE_PREFERENCES ="MY_SHARE_PREFERENCES";

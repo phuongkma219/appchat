@@ -11,8 +11,6 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 
-import com.kma.securechatapp.MainActivity;
-
 public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
     protected T binding;
     protected LayoutInflater myInflater;

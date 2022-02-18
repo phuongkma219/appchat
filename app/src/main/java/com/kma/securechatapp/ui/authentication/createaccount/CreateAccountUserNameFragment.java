@@ -1,8 +1,6 @@
 package com.kma.securechatapp.ui.authentication.createaccount;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +13,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.kma.securechatapp.R;
@@ -32,7 +28,6 @@ import com.kma.securechatapp.helper.CommonHelper;
 import com.kma.securechatapp.ui.authentication.PinCodeFragment;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -4,13 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,14 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.DashboardAdapter;
 import com.kma.securechatapp.core.AppData;
-import com.kma.securechatapp.core.api.ApiInterface;
-import com.kma.securechatapp.core.api.ApiUtil;
 import com.kma.securechatapp.core.api.model.UserInfo;
 import com.kma.securechatapp.core.event.EventBus;
 import com.kma.securechatapp.ui.control.suggestview.SuggestView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

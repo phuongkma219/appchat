@@ -2,11 +2,9 @@ package com.kma.securechatapp.ui.create_post;
 
 import android.Manifest;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -27,14 +25,11 @@ import com.kma.securechatapp.core.api.model.post.Content;
 import com.kma.securechatapp.core.api.model.upload_imgae.ImageUpload;
 import com.kma.securechatapp.core.api.model.upload_imgae.ItemImage;
 import com.kma.securechatapp.core.api.model.userprofile.User;
-import com.kma.securechatapp.core.api.model.userprofile.login.DataLogin;
 import com.kma.securechatapp.databinding.FragmentCreatePostBinding;
 import com.kma.securechatapp.helper.CommonHelper;
-import com.kma.securechatapp.ui.login.MySharePreferences;
 import com.kma.securechatapp.ui.user_me.UserViewModel;
 import com.kma.securechatapp.utils.Utils;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 

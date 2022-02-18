@@ -1,6 +1,5 @@
 package com.kma.securechatapp.adapter.viewholder;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,11 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.kma.securechatapp.MainActivity;
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.core.api.model.UserInfo;
-import com.kma.securechatapp.ui.control.suggestview.SuggestView;
-import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.common.ImageLoader;
 
 import butterknife.BindView;

@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.viewholder.DashboardViewHoder;
-import com.kma.securechatapp.adapter.viewholder.SuggestViewHolder;
 import com.kma.securechatapp.core.api.model.Feed;
 
 import java.util.List;

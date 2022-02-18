@@ -1,13 +1,10 @@
 package com.kma.securechatapp.core.realm_model;
 
-import com.google.gson.annotations.SerializedName;
 import com.kma.securechatapp.core.AppData;
 import com.kma.securechatapp.core.api.model.Conversation;
-import com.kma.securechatapp.core.api.model.UserConversation;
 import com.kma.securechatapp.core.api.model.UserInfo;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import io.realm.RealmList;
 import io.realm.RealmObject;

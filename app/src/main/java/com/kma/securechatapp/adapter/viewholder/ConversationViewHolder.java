@@ -1,5 +1,7 @@
 package com.kma.securechatapp.adapter.viewholder;
 
+import static android.view.View.GONE;
+
 import android.os.Build;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,19 +12,11 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
-import com.kma.securechatapp.helper.ImageLoadTask;
 import com.kma.securechatapp.utils.common.ImageLoader;
 import com.kma.securechatapp.utils.common.StringHelper;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.view.View.GONE;
 
 public class ConversationViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.text_message)

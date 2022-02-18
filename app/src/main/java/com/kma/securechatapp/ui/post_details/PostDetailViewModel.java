@@ -7,10 +7,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.kma.securechatapp.Constant;
 import com.kma.securechatapp.core.api.model.comment.Comment;
-import com.kma.securechatapp.core.api.model.comment.DataComment;
 import com.kma.securechatapp.core.api.model.comment.PostComment;
 import com.kma.securechatapp.core.api.model.create_post.PostCompelete;
-import com.kma.securechatapp.core.api.model.post.Post;
 import com.kma.securechatapp.core.api.model.post.PostX;
 import com.kma.securechatapp.repository.ApiRetrofit;
 import com.kma.securechatapp.repository.ApiService;

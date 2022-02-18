@@ -3,18 +3,13 @@ package com.kma.securechatapp.ui.control.suggestview;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.View;
-import android.widget.FrameLayout;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kma.securechatapp.R;
 import com.kma.securechatapp.adapter.SuggestViewAdapter;
-import com.kma.securechatapp.core.api.model.Conversation;
 import com.kma.securechatapp.core.api.model.UserInfo;
-import com.kma.securechatapp.ui.conversation.ConversationListFragment;
-import com.kma.securechatapp.ui.conversation.InboxActivity;
 import com.kma.securechatapp.ui.profile.UserProfileActivity;
 import com.kma.securechatapp.utils.misc.RecyclerItemClickListener;
 
